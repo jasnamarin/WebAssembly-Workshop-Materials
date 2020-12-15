@@ -11,11 +11,6 @@
 #define W_WIDTH (WIDTH * CELL)
 #define W_HEIGHT (HEIGHT * CELL)
 
-
-typedef struct coor {
-    int x, y;
-} coordinates;
-
 SDL_Window* window;
 SDL_Renderer* renderer;
 TTF_Font* font;

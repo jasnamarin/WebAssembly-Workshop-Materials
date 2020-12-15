@@ -1,7 +1,5 @@
 #include "h/hello.h"
 
-SDL_Color white = { 240,240,240 };
-
 int main()
 {
     if (SDL_Init(SDL_INIT_VIDEO) < 0)
@@ -13,7 +11,7 @@ int main()
     if(TTF_Init() < 0)
         return 1;
 
-    SDL_Color color = white;
+    SDL_Color color = { 240,240,240 };
 
     SDL_bool quit = SDL_FALSE;
     while (!quit) {
