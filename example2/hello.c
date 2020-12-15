@@ -51,9 +51,19 @@ int main()
     if (SDL_CreateWindowAndRenderer(W_WIDTH, W_HEIGHT, 0, &window, &renderer) < 0)
         return 1;
 
-    while (1) {
+    SDL_bool quit = SDL_FALSE;
+    while (!quit) {
         drawSquares();
         SDL_Delay(500);
+
+        SDL_Event event;
+        while (SDL_PollEvent(&event)) {
+            switch (event.type) {
+            case SDL_QUIT:
+                quit = SDL_TRUE;
+                break;
+            }
+        }
     }
 
     SDL_DestroyRenderer(renderer);
