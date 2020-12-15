@@ -2,21 +2,26 @@
 
 int main()
 {
+    SDL_Window* window;
+    SDL_Renderer* renderer;
+    TTF_Font* font;
+
     if (SDL_Init(SDL_INIT_VIDEO) < 0)
         return 1;
 
     if (SDL_CreateWindowAndRenderer(W_WIDTH, W_HEIGHT, 0, &window, &renderer) < 0)
         return 1;
 
-    if(TTF_Init() < 0)
+    if (TTF_Init() < 0)
         return 1;
+    font = TTF_OpenFont("font/gamecontinue.ttf", 100);
 
     SDL_Color color = { 240,240,240 };
-
+    
     SDL_bool quit = SDL_FALSE;
     while (!quit) {
-        drawSquares();
-        displayText(color);
+        drawSquares(renderer);
+        displayText(renderer, font, color);
         SDL_Delay(500);
 
         SDL_Event event;

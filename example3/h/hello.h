@@ -11,12 +11,8 @@
 #define W_WIDTH (WIDTH * CELL)
 #define W_HEIGHT (HEIGHT * CELL)
 
-SDL_Window* window;
-SDL_Renderer* renderer;
-TTF_Font* font;
-
-void drawSquares();
-void displayText(SDL_Color color);
+void drawSquares(SDL_Renderer* renderer);
+void displayText(SDL_Renderer* renderer, TTF_Font* font, SDL_Color color);
 SDL_Color getRandomColor();
 
 #endif
