@@ -1,1 +1,1 @@
-# WebAssembly-Workshop-Materials
+# WebAssembly Workshop Materials
