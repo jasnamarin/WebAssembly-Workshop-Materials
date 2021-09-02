@@ -46,21 +46,18 @@ SDL_Color getRandomColor()
 
 void mainLoop(void* args) {
     drawSquares(((mainloopArgument*)args)->renderer);
-        displayText(((mainloopArgument*)args)->renderer, ((mainloopArgument*)args)->font, ((mainloopArgument*)args)->color);
-        //SDL_Delay(500);
+    displayText(((mainloopArgument*)args)->renderer, ((mainloopArgument*)args)->font, ((mainloopArgument*)args)->color);
+    //SDL_Delay(500);
 
-        SDL_Event event;
-        while (SDL_PollEvent(&event)) {
-            switch (event.type) {
-            case SDL_QUIT:
-                quit = SDL_TRUE;
+    SDL_Event event;
+    while (SDL_PollEvent(&event)) {
+        switch (event.type) {
+        case SDL_KEYDOWN:
+            switch (event.key.keysym.sym) {
+            case SDLK_SPACE:
+                ((mainloopArgument*)args)->color = getRandomColor();
                 break;
-            case SDL_KEYDOWN:
-                switch (event.key.keysym.sym) {
-                case SDLK_SPACE:
-                    color = getRandomColor();
-                    break;
-                }
             }
         }
+    }
 }

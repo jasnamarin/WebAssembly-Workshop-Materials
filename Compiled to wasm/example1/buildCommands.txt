@@ -1,0 +1,2 @@
+emcc -c hello.c -o hello.o
+emcc hello.o -o hello.html

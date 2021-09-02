@@ -1,0 +1,2 @@
+emcc -c hello.c -o hello.o -s USE_SDL=2
+emcc hello.o -o hello.html -s USE_SDL=2

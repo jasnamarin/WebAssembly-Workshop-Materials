@@ -18,14 +18,14 @@ int main()
 
     SDL_Color color = { 240,240,240 };
 
+    
     mainloopArgument* args = (mainloopArgument*)malloc(sizeof(mainloopArgument));
     args->color = color;
     args->renderer = renderer;
     args->font = font;
-
-    emscripten_set_main_loop_args(mainLoop, args, 5, 1);
-
-   /* 
+    emscripten_set_main_loop_arg(mainLoop, args, 5, 1);
+    
+ /*   
     SDL_bool quit = SDL_FALSE;
     while (!quit) {
         drawSquares(renderer);
@@ -48,7 +48,6 @@ int main()
         }
     }
 */
-
     free(args);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);

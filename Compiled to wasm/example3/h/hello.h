@@ -13,11 +13,13 @@
 #define W_WIDTH (WIDTH * CELL)
 #define W_HEIGHT (HEIGHT * CELL)
 
+
 typedef struct arg {
 	SDL_Renderer* renderer;
 	TTF_Font* font;
 	SDL_Color color;
 } mainloopArgument;
+
 
 void drawSquares(SDL_Renderer* renderer);
 void displayText(SDL_Renderer* renderer, TTF_Font* font, SDL_Color color);
